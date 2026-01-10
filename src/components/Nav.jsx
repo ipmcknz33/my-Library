@@ -13,9 +13,11 @@ const Nav = () => {
                 Home
                 </a>
             </li>
-            <button className="btn__menu">
-                <FontAWesomeIcon icon="bars" />
-            </button>
+            <li className="nav__link">
+                <button className="btn__menu">
+                    <FontAwesomeIcon icon="bars" />
+                </button>
+            </li>
         </ul>
       </div>
     </nav>
