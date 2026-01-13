@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import LibraryLogo from '../assets/library.svg ';
-import { Link } from 'react-router-dom'; 
+import LibraryLogo from '../assets/Library.svg';
+
 
 const Nav = () => {
   return (
@@ -11,9 +11,14 @@ const Nav = () => {
         <img src={LibraryLogo} alt="Logo" />
         </a>
         <ul className="nav__links">
-            <li className="nav__link">
-                <a href="/" className="nav__link-a">
+            <li className="nav__list">
+                <a href="/" className="nav__link">
                 Home
+                </a>
+            </li>
+            <li className="nav__list">
+                <a href="/books" className="nav__link">
+                Books
                 </a>
             </li>
                 <button className="btn__menu">
@@ -22,30 +27,31 @@ const Nav = () => {
             <li className="nav__icon">
                 <a href="/cart" className="nav__link">
                 <FontAwesomeIcon icon="shopping-cart" />
-                </a>
+                    </a>
                 <span className="cart__length">2</span>
                 </li>
-        </ul>
-        <button className="btn__menu btn__menu--close">
-            <FontAwesomeIcon icon="bars" />
-            </button>
-            <ul className="menu__links">
-                <li className="menu__link">
-                    <a href="/" className="menu__link-a">
-                    Home
-                    </a> 
-                </li>
-                <li className="menu__link">
-                    <a href="/books" className="menu__link-a">
-                    Books
-                    </a>
-                </li>
-                <li className="menu__link">
-                    <a href="/cart" className="menu__link-a">
-                    Cart
-                    </a>
-                </li>
             </ul>
+            <div className="menu__backdrop">
+                <button className="btn__menu btn__menu--close">
+                    <FontAwesomeIcon icon="times" />
+                    </button>
+                    <ul className="menu__links">
+                        <li className="menu__list">
+                            <a href="/" className="menu__link">
+                            Home
+                            </a>
+                        </li>
+                        <li className="menu__list">
+                            <a href="/books" className="menu__link">
+                            Books
+                            </a>
+                        </li><li className="menu__list">
+                            <a href="/cart" className="menu__link">
+                            Cart
+                            </a>
+                    </li>
+                </ul>
+            </div>
       </div>
     </nav>
   );
