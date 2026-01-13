@@ -3,6 +3,7 @@ import Landing from './components/Landing';
 import Nav from './components/Nav';
 import './index.css';
 import Highlights from './components/Highlights';
+import Featured from './components/Featured';
 
 //import Footer from './components/Footer';
 //import { BrowserRouter as Router, Route }  from 'react-router-dom';
@@ -17,6 +18,8 @@ function App() {
       <Nav />
       <Landing />
       <Highlights />
+      <Featured />
+      
 
        
     </div>
