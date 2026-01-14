@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Book() {
+ const Book = () => {
   return (
     <div>
       
     </div>
-  )
+  );
 }
+export default Book;

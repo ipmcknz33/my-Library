@@ -360,6 +360,9 @@ HIGHLIGHTS
 FEATURES 
 
 */
+#featured .container {
+  margin-top: 64px;
+}
 
 #features {
   padding-top: 8vw;
@@ -370,6 +373,11 @@ FEATURES
   display: flex;
   flex-wrap: wrap;
   margin: 0 -24px;
+}
+
+.books .row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .book {
