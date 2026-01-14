@@ -12,7 +12,7 @@ const Discounted = () => {
                 </h2>
                 <div className="books">
                     {books
-                    .filter(book => book.salPrice)
+                    .filter(book => book.salePrice)
                     .map((book) => (
                         <Book book={book} key={book.id} />
                     ))}
