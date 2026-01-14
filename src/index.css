@@ -357,14 +357,14 @@ HIGHLIGHTS
 
 /* 
 
-FEATURES 
+FEATURED
 
 */
 #featured .container {
   margin-top: 64px;
 }
 
-#features {
+#featured {
   padding-top: 8vw;
   background-color: rgba(115, 66, 214, 0.1);
 }
@@ -373,11 +373,6 @@ FEATURES
   display: flex;
   flex-wrap: wrap;
   margin: 0 -24px;
-}
-
-.books .row {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .book {
