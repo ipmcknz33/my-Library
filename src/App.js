@@ -4,6 +4,8 @@ import Nav from './components/Nav';
 import './index.css';
 import Highlights from './components/Highlights';
 import Featured from './components/Featured';
+import Discounted from './components/Discounted';
+
 
 //import Footer from './components/Footer';
 //import { BrowserRouter as Router, Route }  from 'react-router-dom';
@@ -19,9 +21,7 @@ function App() {
       <Landing />
       <Highlights />
       <Featured />
-      
-
-       
+      <Discounted />
     </div>
   );
 }
