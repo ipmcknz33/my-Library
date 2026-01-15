@@ -2,6 +2,7 @@ import React from "react";
 import { books } from "../data";
 import Book from "../components/ui/Book";
 
+
 const Books = () => {
   return (
     <div id="books__body">
@@ -10,9 +11,7 @@ const Books = () => {
           <div className="books__container">
             <div className="row">
               <div className="books__header">
-                <h2 className="section__title books__header--title">
-                  All Books
-                </h2>
+                <h2 className="section__title books__header--title">All Books</h2>
                 <select id="filter" defaultValue="DEFAULT">
                     <option value="DEFAULT" disabled>Sort</option>
                     <option value="LOW_TO_HIGH" selected disabled>Price, Low to High</option>
@@ -22,7 +21,7 @@ const Books = () => {
               </div>
               <div className="books">
                  {books.map((book) => (
-                   <Books book={book} key={book.id} />
+                   <Book book={book} key={book.id} />
                 ))}
               </div>
             </div>

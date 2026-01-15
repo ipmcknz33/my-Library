@@ -14,12 +14,12 @@ import Books from './pages/Books';
 function App() {
   return (
     <Router>
-    <div className="App">
-      <Nav />
-      <Route path="/" exact component={Home} />
-      <Route path="/books" exact component={Books} />
-      <Footer />
-    </div>
+      <div className="App">
+        <Nav />
+        <Route path="/" exact component={Home} />
+        <Route path="/books" component={Books} />
+        <Footer />
+      </div>
     </Router>
   );
 }
