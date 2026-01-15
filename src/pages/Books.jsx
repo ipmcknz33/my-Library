@@ -1,9 +1,10 @@
 import React from "react";
 import { books } from "../data";
+import Book from "../components/ui/Book";
 
 const Books = () => {
   return (
-    <div className="" id="books__body">
+    <div id="books__body">
       <main id="books__main">
         <section>
           <div className="books__container">
