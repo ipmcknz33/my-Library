@@ -3,7 +3,7 @@ import Book from "../components/ui/Book";
 
 const Books = ({ books: initialBooks }) => {
   const [books, setBooks] = useState(initialBooks);
-  
+
   function filterBooks(filter) {
     console.log(filter)
     if (filter === "LOW_TO_HIGH") {
@@ -13,7 +13,7 @@ const Books = ({ books: initialBooks }) => {
           .sort(
             (a, b) =>
               (a.salePrice || a.originalPrice) -
-              (b.salePrice || b.orginialPrice)
+              (b.salePrice || b.originalPrice)
           )
       );
     }
@@ -23,7 +23,7 @@ const Books = ({ books: initialBooks }) => {
           .slice()
           .sort(
             (a, b) =>
-              (b.salePrice || b.orginialPrice) -
+              (b.salePrice || b.originalPrice) -
               (a.salePrice || a.originalPrice)
           )
       );
@@ -45,18 +45,18 @@ const Books = ({ books: initialBooks }) => {
                 <select
                   id="filter"
                   defaultValue="DEFAULT"
-                  onChanged={(event) => filterBooks(event.target.value)}
+                  onChange={(event) => filterBooks(event.target.value)}
                 >
-                  <option value="DEFAULT" disabled>
+                  <option value="DEFAULT">
                     Sort
                   </option>
-                  <option value="LOW_TO_HIGH" selected disabled>
+                  <option value="LOW_TO_HIGH">
                     Price, Low to High
                   </option>
-                  <option value="HIGH_TO_LOW" selected disabled>
+                  <option value="HIGH_TO_LOW">
                     Price, High to Low
                   </option>
-                  <option value="RATING" selected disabled>
+                  <option value="RATING">
                     Ratings
                   </option>
                 </select>
