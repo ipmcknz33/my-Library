@@ -1,42 +1,98 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
-import { Link } from 'react-router-dom';
-import Rating from '../components/ui/Rating';
-import Price from '../components/ui/Price';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Rating from "../components/ui/Rating";
+import Price from "../components/ui/Price";
+import Book from "../components/ui/Book";
 
-const BookInfo = ({ books }) => {
+
+
+
+const BookInfo = ({ books, addToCart }) => {
+  const { id } = useParams();
+  const book = books.find((book) => +book.id === +id);
+  const [added, setAdded] = useState(false);
+
+  function addBookToCart(book) {
+    addToCart(book);
+  }
+
+  function bookExistsOnCart() {
+    return cart.find((book) => book.id === +id);
+  }
+
   return (
-   <div id="books__body">
-    <main id="books__main">
+    <div id="books__body">
+      <main id="books__main">
         <div className="books__container">
-            <div className="row">
-                <div className="book__selected--top">
-                    <Link to="/books" className="book__link">
-                    <FontAwesomeIcon icon="arrow-left" />
-                    </Link>
-                    <Link to="/books" className="book__link"><h2 className="book__selected--title--top">Books</h2>
-                    </Link>
-                </div>
-                <div className="book__selected">
-                    <figure className="book__selected--figure">
-                        <img src="https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg" alt="" className="book__selected-ig" />
-                    </figure>
-                    <div className="book__selected--discription">
-                        <h2 className="book__selected--title">Crack the Code Interview</h2>
-                        <Rating rating="4.5"/>
-                        <div className="book__selected--price">
-                         <Price originalPrice={50} salePrice={20} />
-                        </div>
-                        <div className="book__summary">
-                            
-                        </div>
-                    </div>
-                </div>
+          <div className="row">
+            <div className="book__selected--top">
+              <Link to="/books" className="book__link">
+                <FontAwesomeIcon icon="arrow-left" />
+              </Link>
+              <Link to="/books" className="book__link">
+                <h2 className="book__selected--title--top">Books</h2>
+              </Link>
             </div>
+            <div className="book__selected">
+              <figure className="book__selected--figure">
+                <img src={book.url} alt="" className="book__selected-img" />
+              </figure>
+              <div className="book__selected--discription">
+                <h2 className="book__selected--title">{book.title}</h2>
+                <Rating rating={book.rating} />
+                <div className="book__selected--price">
+                  <Price
+                    originalPrice={book.originalPrice}
+                    salePrice={book.salePrice}
+                  />
+                </div>
+                <div className="book__summary">
+                  <h3 className="book__summary--title">Summary</h3>
+                  <p className="book__summary--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ducimus quae, accusamus quaerat aperiam voluptatum nobis
+                    ipsa cum repellat, natus molestias deserunt a! Ipsa
+                    laudantium eveniet eius debitis magni vero quia!
+                  </p>{" "}
+                  <p className="book__summary--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ducimus quae, accusamus quaerat aperiam voluptatum nobis
+                    ipsa cum repellat, natus molestias deserunt a! Ipsa
+                    laudantium eveniet eius debitis magni vero quia!
+                  </p>
+                </div>
+                {bookExistsOnCart() ? (
+                    <Link to={`/cart`} className="book__link">
+                  <button className="btn">Checkout</button>
+                    </Link>
+                ) : (
+                  <button className="btn" onClick={() => addBookToCart(book)}>
+                    Add to Cart
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-    </main>
-   </div>
+        <div className="books__contanier">
+          <div className="row">
+            <div className="book__selected--top">
+              <h2 className="book__selected--top">Recommended Books</h2>
+            </div>
+            <div className="books">
+              {books
+                .filter((book) => book.rating === 5 && +book.id !== +id)
+                .slice(0, 4)
+                .map((book) => (
+                  <Book book={book} key={book.id} />
+                ))}
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   );
-}
+};
 
 export default BookInfo;
