@@ -8,7 +8,7 @@ const Books = ({ books: initialBooks }) => {
     console.log(filter)
     if (filter === "LOW_TO_HIGH") {
       setBooks(
-        books
+        initialBooks
           .slice()
           .sort(
             (a, b) =>
@@ -19,7 +19,7 @@ const Books = ({ books: initialBooks }) => {
     }
     if (filter === "HIGH_TO_LOW") {
       setBooks(
-        books
+        initialBooks
           .slice()
           .sort(
             (a, b) =>
