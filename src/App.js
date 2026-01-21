@@ -65,7 +65,7 @@ function App() {
               />
             }
           />
-          <Route path="/cart" element={<Cart books={books} />} />
+          <Route path="/cart" element={<Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem} />} />
         </Routes>
         <Footer />
       </div>

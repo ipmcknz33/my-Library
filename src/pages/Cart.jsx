@@ -25,7 +25,7 @@ const Cart = ({ cart = [], changeQuantity, removeItem }) => {
             <div className="cart">
               <div className="cart__header">
                 <span className="cart__book">Book</span>
-                <span className="cart__quanitity">Quanitity</span>
+                <span className="cart__quanitity">Quantity</span>
                 <span className="cart__total">Price</span>
               </div>
 
