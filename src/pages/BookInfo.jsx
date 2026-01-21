@@ -14,7 +14,7 @@ const BookInfo = ({ books, addToCart, cart }) => {
   const [added, setAdded] = useState(false);
 
   function addBookToCart(book) {
-    addToCart(book);
+    setAdded(book);
   }
 
   function bookExistsOnCart() {
