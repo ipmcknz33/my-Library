@@ -9,7 +9,7 @@ const Book = ({ book }) => {
 
   useEffect(() => {
     mountedRef.current = true;
-    setImgSrc(null); // show skeleton while loading new image
+    setImgSrc(null); // show skeleton while loading new image!
 
     if (!book?.url) return;
 
