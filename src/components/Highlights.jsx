@@ -15,7 +15,7 @@ const Highlights = () => {
             <Highlight
               icon={<FontAwesomeIcon icon="bolt" />}
               title="Easy and Quick"
-              description="Get access to the book you purchased online instantly."
+              description="Get access to the book you purchased online instantly!"
             />
             <Highlight
               icon={<FontAwesomeIcon icon="book-open" />}
