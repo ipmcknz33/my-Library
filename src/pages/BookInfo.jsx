@@ -11,10 +11,10 @@ import Book from "../components/ui/Book";
 const BookInfo = ({ books, addToCart, cart }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
-  const [added, setAdded] = useState(false);
+  const [added, addToCart] = useState(false);
 
   function addBookToCart(book) {
-    setAdded(book);
+    addToCart(book);
   }
 
   function bookExistsOnCart() {
