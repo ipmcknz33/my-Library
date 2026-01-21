@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Highlight from "./ui/Highlight__Temp";
-
 
 const Highlights = () => {
   return (
@@ -11,6 +10,7 @@ const Highlights = () => {
           <h2 className="section__title">
             Why choose <span className="purple">Library</span>
           </h2>
+
           <div className="highlight__wrapper">
             <Highlight
               icon={<FontAwesomeIcon icon="bolt" />}
@@ -35,3 +35,4 @@ const Highlights = () => {
 };
 
 export default Highlights;
+
